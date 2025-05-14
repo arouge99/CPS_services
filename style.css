@@ -68,7 +68,6 @@
   }
   
   .services__title {
-    font-size: 1.5rem;
     font-weight: bold;
     font-size: 28px;
     margin-bottom: 1rem;
@@ -156,10 +155,6 @@
     justify-content: center;
   }
 
-.pc_button {
-  display: none;
-}
-
 .header__right {
   gap: 10px;
 }
@@ -180,7 +175,6 @@
 
 .services {
   margin-top: 2rem;
-  padding: 0 0.5rem;
 }
 
 .services__title {
@@ -191,6 +185,7 @@
     display: flex;
     overflow-x: auto;
     gap: 0.5rem;
+    padding: 15px;
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
   }
@@ -220,6 +215,7 @@
 
 .services__text {
   margin-bottom: 1.5rem;
+  padding: 15px;
 }
 
   .services__description {
@@ -249,10 +245,19 @@
 }
 
 /*tablet layout*/
-@media (min-width: 768px) {
-
+@media (min-width: 768px) and (max-width: 1251px) {
 .pc_button {
   display: none;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.main {
+  max-width: 1119px;
+  margin: 0 auto;
 }
 
 .hide-on-tablet {
@@ -286,37 +291,30 @@
 
 .services__title {
   font-size: 1.8rem;
-}
-
-.services {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
+}    
 .services__content {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .services__tabs {
-  overflow-x: unset; /*removes horizontal scroll*/
+  display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  overflow-x: unset; /*removes horizontal scroll*/
+  justify-content: center;
   gap: 1rem;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .services__tab--active {
   border: 1px solid #6df0f7;
   background-color: white;
   font-weight: normal;
-}
-
-.services__tab--active--pc {
-  display: none;
 }
 
 .services__description {
@@ -328,8 +326,8 @@
   gap: 2rem;
   align-items: stretch;
   flex-wrap: wrap;
-  max-width: 768px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 .services__image {
@@ -355,10 +353,10 @@
 @media (min-width: 1252px) {
 .main {
   max-width: 1252px;
-  padding: 2rem 0;
 }
 
 .pc_button {
+  display: inline-block;
   background-color: white;
   border: 1px solid #6df0f7;
   border-radius: 6px;
@@ -377,8 +375,8 @@
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
-  padding: 0 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1.7rem;
+  margin-bottom: 2rem;
 }
 
 .header__right--desktop-only img {
@@ -415,10 +413,12 @@
 
 .services__tabs {
   display: flex;
-  flex-wrap: wrap;
-  overflow-x: unset;
+  flex-wrap: nowrap;
   justify-content: flex-start;
-  gap: 2rem;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin: 1rem 2rem;
 }
 
 .services__tab {
@@ -427,13 +427,8 @@
   flex-shrink: 0;
 }
 
-.services__tab--active--pc {
-  border: 1px solid #6df0f7;
-  background-color: white;
-  font-weight: normal;
-}
-
-.services__tab--active {
+.services__tab--active,
+.services__tab--desktop {
   background-color: transparent;
   border: none;
   font-weight: normal;
